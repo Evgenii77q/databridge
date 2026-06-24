@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECM Workspace</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        --bg: #f4efe5;
+        --panel: rgba(255, 250, 242, 0.88);
+        --panel-border: rgba(80, 56, 36, 0.12);
+        --ink: #1e1a16;
+        --muted: #6f6256;
+        --accent: #d97706;
+        --accent-2: #0f766e;
+        --danger: #b45309;
+        --ok: #166534;
+        --shadow: 0 18px 48px rgba(68, 44, 20, 0.12);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(circle at top left, rgba(217, 119, 6, 0.16), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.14), transparent 28%),
+          linear-gradient(180deg, #fcfaf6 0%, var(--bg) 100%);
+      }
+
+      .shell {
+        width: min(1220px, calc(100% - 32px));
+        margin: 28px auto 40px;
+      }
+
+      .hero {
+        padding: 28px;
+        border-radius: 28px;
+        background: linear-gradient(135deg, rgba(255, 248, 238, 0.95), rgba(247, 241, 231, 0.92));
+        border: 1px solid var(--panel-border);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(217, 119, 6, 0.18), rgba(15, 118, 110, 0.18));
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(34px, 5vw, 66px);
+        line-height: 0.96;
+        font-weight: 700;
+      }
+
+      .lead {
+        margin: 0;
+        max-width: 780px;
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-top: 22px;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: var(--radius);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 26px;
+      }
+
+      .card p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 15px;
+      }
+
+      label {
+        display: block;
+        margin: 12px 0 6px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        border: 1px solid rgba(80, 56, 36, 0.18);
+        background: rgba(255, 255, 255, 0.84);
+        color: var(--ink);
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-size: 15px;
+        line-height: 1.4;
+        outline: none;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: rgba(217, 119, 6, 0.52);
+        box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.08);
+      }
+
+      textarea {
+        min-height: 118px;
+        resize: vertical;
+      }
+
+      .actions,
+      .double {
+        display: grid;
+        gap: 10px;
+      }
+
+      .actions {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+
+      .double {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
+      button {
+        border: 0;
+        border-radius: 14px;
+        padding: 12px 16px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        color: white;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      button.secondary {
+        background: white;
+        color: var(--ink);
+        border: 1px solid rgba(80, 56, 36, 0.18);
+      }
+
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .row {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1.3fr 1fr auto;
+        align-items: center;
+      }
+
+      .row.type-row {
+        grid-template-columns: 1.2fr 1fr auto auto;
+      }
+
+      .row button {
+        padding: 10px 12px;
+      }
+
+      .inline-note {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .status {
+        margin-top: 14px;
+        padding: 12px 14px;
+        border-radius: 16px;
+        white-space: pre-wrap;
+        font-size: 13px;
+        line-height: 1.5;
+        border: 1px dashed rgba(80, 56, 36, 0.18);
+        background: rgba(255, 255, 255, 0.55);
+        color: var(--muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      .status.ok {
+        color: var(--ok);
+        border-color: rgba(22, 101, 52, 0.18);
+      }
+
+      .status.error {
+        color: var(--danger);
+        border-color: rgba(180, 83, 9, 0.22);
+      }
+
+      .chip {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(80, 56, 36, 0.12);
+        margin-top: 14px;
+        font-size: 14px;
+      }
+
+      .chip strong {
+        max-width: 420px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: min(100% - 20px, 1220px);
+        }
+
+        .hero,
+        .card {
+          padding: 18px;
+        }
+
+        .row,
+        .row.type-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <span class="eyebrow">ECM Workspace</span>
+        <h1>Documents without the scaffolding.</h1>
+        <p class="lead">
+          One screen to describe a document type, create a document, and find it again. The API is
+          behind the page, not in front of you.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>1. Connect</h2>
+          <p>Use the same server for both the API and the interface. No separate front-end process is required.</p>
+          <label for="baseUrl">Server Address</label>
+          <input id="baseUrl" />
+          <label for="actor">Your Name</label>
+          <input id="actor" value="system" />
+          <div class="actions">
+            <button type="button" onclick="checkHealth()">Check Connection</button>
+          </div>
+          <div id="healthStatus" class="status"></div>
+        </article>
+
+        <article class="card">
+          <h2>2. Document Type</h2>
+          <p>Create the shape of a document once, then reuse it for every record.</p>
+          <label for="typeName">Type Name</label>
+          <input id="typeName" placeholder="invoice" />
+          <label for="typeDesc">Short Description</label>
+          <input id="typeDesc" placeholder="Incoming invoice" />
+          <label>Fields</label>
+          <div id="fieldRows" class="list"></div>
+          <div class="actions">
+            <button class="secondary" type="button" onclick="addFieldRow()">Add Field</button>
+            <button class="secondary" type="button" onclick="loadType()">Load Type</button>
+            <button type="button" onclick="saveType()">Save Type</button>
+          </div>
+          <div id="typeStatus" class="status"></div>
+        </article>
+
+        <article class="card">
+          <h2>3. Document</h2>
+          <p>Choose a type, fill the business fields, add the content, and save.</p>
+          <label for="docOwner">Owner</label>
+          <input id="docOwner" value="alice" />
+          <label for="docTitle">Title</label>
+          <input id="docTitle" placeholder="Invoice 1" />
+          <label for="docType">Type</label>
+          <input id="docType" placeholder="invoice" />
+          <div class="double">
+            <button class="secondary" type="button" onclick="prepareMetadata()">Fill Fields From Type</button>
+            <button class="secondary" type="button" onclick="addMetadataRow()">Add Manual Field</button>
+          </div>
+          <label>Document Details</label>
+          <div id="metadataRows" class="list"></div>
+          <label for="docContent">Content</label>
+          <textarea id="docContent" placeholder="Paste or type document text here"></textarea>
+          <div class="actions">
+            <button type="button" onclick="createDocument()">Create Document</button>
+            <button class="secondary" type="button" onclick="openLastDocument()">Open Last Created</button>
+          </div>
+          <div class="chip">Last document: <strong id="lastDocId">none</strong></div>
+          <div id="docStatus" class="status"></div>
+        </article>
+
+        <article class="card">
+          <h2>4. Find</h2>
+          <p>Search by title, content, or metadata. If you know the type field, use `metadata:field`.</p>
+          <label for="searchQuery">Search Text</label>
+          <input id="searchQuery" placeholder="invoice or metadata:supplier" />
+          <label for="searchLimit">How Many</label>
+          <input id="searchLimit" type="number" value="10" min="1" max="100" />
+          <div class="actions">
+            <button type="button" onclick="searchDocuments()">Search</button>
+          </div>
+          <div id="searchStatus" class="status"></div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const state = {
+        lastDocId: null,
+      };
+
+      function el(id) {
+        return document.getElementById(id);
+      }
+
+      function defaultBaseUrl() {
+        if (location.protocol.startsWith("http")) {
+          return location.origin;
+        }
+        return "http://localhost:8000";
+      }
+
+      function apiUrl(path) {
+        return `${el("baseUrl").value.replace(/\/$/, "")}${path}`;
+      }
+
+      function apiHeaders() {
+        return {
+          "Content-Type": "application/json",
+          "X-Actor": el("actor").value.trim() || "system",
+        };
+      }
+
+      function setStatus(id, message, ok = true) {
+        const node = el(id);
+        node.textContent = typeof message === "string" ? message : JSON.stringify(message, null, 2);
+        node.className = `status ${ok ? "ok" : "error"}`;
+      }
+
+      function makeBase64(text) {
+        const bytes = new TextEncoder().encode(text);
+        let binary = "";
+        for (const value of bytes) {
+          binary += String.fromCharCode(value);
+        }
+        return btoa(binary);
+      }
+
+      function addFieldRow(name = "", type = "string", required = false) {
+        const row = document.createElement("div");
+        row.className = "row type-row";
+        row.innerHTML = `
+          <input placeholder="field name" value="${name}" />
+          <select>
+            <option value="string">Text</option>
+            <option value="int">Integer</option>
+            <option value="float">Number</option>
+            <option value="bool">Yes / No</option>
+            <option value="date">Date</option>
+          </select>
+          <label style="margin:0;display:flex;align-items:center;gap:8px;font-size:14px;text-transform:none;letter-spacing:0;color:var(--ink);">
+            <input type="checkbox" style="width:auto;" />
+            Required
+          </label>
+          <button class="secondary" type="button">Remove</button>
+        `;
+        row.querySelector("select").value = type;
+        row.querySelector("input[type=checkbox]").checked = required;
+        row.querySelector("button").addEventListener("click", () => row.remove());
+        el("fieldRows").appendChild(row);
+      }
+
+      function collectFields() {
+        return Array.from(document.querySelectorAll("#fieldRows .type-row"))
+          .map((row) => {
+            const name = row.querySelector("input").value.trim();
+            if (!name) {
+              return null;
+            }
+            return {
+              name,
+              type: row.querySelector("select").value,
+              required: row.querySelector("input[type=checkbox]").checked,
+            };
+          })
+          .filter(Boolean);
+      }
+
+      function addMetadataRow(key = "", value = "") {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.innerHTML = `
+          <input placeholder="field" value="${key}" />
+          <input placeholder="value" value="${value}" />
+          <button class="secondary" type="button">Remove</button>
+        `;
+        row.querySelector("button").addEventListener("click", () => row.remove());
+        el("metadataRows").appendChild(row);
+      }
+
+      function collectMetadata() {
+        const result = {};
+        Array.from(document.querySelectorAll("#metadataRows .row")).forEach((row) => {
+          const inputs = row.querySelectorAll("input");
+          const key = inputs[0].value.trim();
+          const value = inputs[1].value.trim();
+          if (key) {
+            result[key] = value;
+          }
+        });
+        return result;
+      }
+
+      async function requestJson(path, options = {}) {
+        const response = await fetch(apiUrl(path), options);
+        const text = await response.text();
+        let payload = text;
+        try {
+          payload = text ? JSON.parse(text) : {};
+        } catch (_) {}
+        if (!response.ok) {
+          throw new Error(typeof payload === "string" ? payload : JSON.stringify(payload, null, 2));
+        }
+        return payload;
+      }
+
+      async function checkHealth() {
+        try {
+          const data = await requestJson("/health");
+          setStatus("healthStatus", data, true);
+        } catch (error) {
+          setStatus("healthStatus", error.message, false);
+        }
+      }
+
+      async function loadType() {
+        const typeName = el("typeName").value.trim();
+        if (!typeName) {
+          setStatus("typeStatus", "Type name is required.", false);
+          return;
+        }
+        try {
+          const data = await requestJson(`/doc-types/${encodeURIComponent(typeName)}`, {
+            headers: apiHeaders(),
+          });
+          el("typeDesc").value = data.description || "";
+          el("fieldRows").innerHTML = "";
+          (data.fields || []).forEach((field) => addFieldRow(field.name, field.type, field.required));
+          setStatus("typeStatus", `Loaded type "${typeName}".`, true);
+        } catch (error) {
+          setStatus("typeStatus", error.message, false);
+        }
+      }
+
+      async function saveType() {
+        try {
+          const payload = {
+            name: el("typeName").value.trim(),
+            description: el("typeDesc").value.trim(),
+            fields: collectFields(),
+          };
+          const data = await requestJson("/doc-types", {
+            method: "POST",
+            headers: apiHeaders(),
+            body: JSON.stringify(payload),
+          });
+          setStatus("typeStatus", data, true);
+          if (payload.name) {
+            el("docType").value = payload.name;
+          }
+        } catch (error) {
+          setStatus("typeStatus", error.message, false);
+        }
+      }
+
+      async function prepareMetadata() {
+        const typeName = el("docType").value.trim() || el("typeName").value.trim();
+        if (!typeName) {
+          setStatus("docStatus", "Choose a type first.", false);
+          return;
+        }
+        try {
+          const data = await requestJson(`/doc-types/${encodeURIComponent(typeName)}`, {
+            headers: apiHeaders(),
+          });
+          el("metadataRows").innerHTML = "";
+          (data.fields || []).forEach((field) => addMetadataRow(field.name, ""));
+          setStatus("docStatus", `Prepared fields for type "${typeName}".`, true);
+        } catch (error) {
+          setStatus("docStatus", error.message, false);
+        }
+      }
+
+      async function createDocument() {
+        try {
+          const payload = {
+            owner: el("docOwner").value.trim(),
+            title: el("docTitle").value.trim(),
+            doc_type: el("docType").value.trim(),
+            content_base64: makeBase64(el("docContent").value),
+            metadata: collectMetadata(),
+          };
+          const data = await requestJson("/documents", {
+            method: "POST",
+            headers: apiHeaders(),
+            body: JSON.stringify(payload),
+          });
+          state.lastDocId = data.id;
+          el("lastDocId").textContent = data.id;
+          setStatus("docStatus", data, true);
+        } catch (error) {
+          setStatus("docStatus", error.message, false);
+        }
+      }
+
+      async function searchDocuments() {
+        try {
+          const query = encodeURIComponent(el("searchQuery").value.trim());
+          const limit = encodeURIComponent(el("searchLimit").value.trim() || "10");
+          const data = await requestJson(`/search?query=${query}&limit=${limit}`, {
+            headers: apiHeaders(),
+          });
+          setStatus("searchStatus", data, true);
+        } catch (error) {
+          setStatus("searchStatus", error.message, false);
+        }
+      }
+
+      async function openLastDocument() {
+        if (!state.lastDocId) {
+          setStatus("docStatus", "No document has been created in this session yet.", false);
+          return;
+        }
+        try {
+          const data = await requestJson(`/documents/${encodeURIComponent(state.lastDocId)}`, {
+            headers: apiHeaders(),
+          });
+          setStatus("docStatus", data, true);
+        } catch (error) {
+          setStatus("docStatus", error.message, false);
+        }
+      }
+
+      el("baseUrl").value = defaultBaseUrl();
+      addFieldRow("supplier", "string", true);
+      addFieldRow("amount", "float", true);
+      addFieldRow("issue_date", "date", false);
+      addMetadataRow("supplier", "ACME");
+      addMetadataRow("amount", "12.5");
+      addMetadataRow("issue_date", "2025-01-01");
+      checkHealth();
+    </script>
+  </body>
+</html>

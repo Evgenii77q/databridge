@@ -1,0 +1,997 @@
+[
+  {
+    "sheet_name": "Входящие документы 500 штук",
+    "step1": [
+      {
+        "excel_column": "ID Документа",
+        "db_column": "dsid_document",
+        "db_table": "public.ddt_document",
+        "match_count": 497,
+        "match_ratio": 0.994,
+        "examples": [
+          "00000002000024up",
+          "0000000200002iic",
+          "0000000200002ja4"
+        ]
+      },
+      {
+        "excel_column": "Глобай ID",
+        "db_column": "dsid_document",
+        "db_table": "public.ddt_document",
+        "match_count": 497,
+        "match_ratio": 0.994,
+        "examples": [
+          "00000002000024up",
+          "0000000200002iic",
+          "0000000200002ja4"
+        ]
+      },
+      {
+        "excel_column": "Временный номер",
+        "db_column": "dss_work_number",
+        "db_table": "public.ddt_document",
+        "match_count": 484,
+        "match_ratio": 1.0,
+        "examples": [
+          "ВР-1925",
+          "ВР-17",
+          "ВР-1367"
+        ]
+      },
+      {
+        "excel_column": "Статус",
+        "db_column": "dss_status",
+        "db_table": "public.ddt_dict_status_doc",
+        "match_count": 8,
+        "match_ratio": 1.0,
+        "examples": [
+          "executed",
+          "duplicate_check",
+          "registered"
+        ]
+      },
+      {
+        "excel_column": "Регистрационный номер",
+        "db_column": "dss_reg_number",
+        "db_table": "public.ddt_document",
+        "match_count": 459,
+        "match_ratio": 0.972457627118644,
+        "examples": [
+          "316",
+          "48",
+          "186"
+        ]
+      },
+      {
+        "excel_column": "Краткое описание",
+        "db_column": "dss_description",
+        "db_table": "public.ddt_document",
+        "match_count": 151,
+        "match_ratio": 0.9741935483870968,
+        "examples": [
+          "1",
+          "11",
+          "111"
+        ]
+      },
+      {
+        "excel_column": "Дата у кореспондента",
+        "db_column": "dss_crsp_reg_number",
+        "db_table": "public.ddt_incoming_type_doc",
+        "match_count": 301,
+        "match_ratio": 0.9585987261146497,
+        "examples": [
+          "/001/1",
+          "/001/2",
+          "/1/17"
+        ]
+      },
+      {
+        "excel_column": "Гриф",
+        "db_column": "dsid_stamp",
+        "db_table": "public.cont_bck",
+        "match_count": 1,
+        "match_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000003rm"
+        ]
+      },
+      {
+        "excel_column": "Маршрут документа",
+        "db_column": "dsid_policy",
+        "db_table": "public.ddt_approve_template",
+        "match_count": 1,
+        "match_ratio": 1.0,
+        "examples": [
+          "00xxxxxx0000052h"
+        ]
+      },
+      {
+        "excel_column": "Вид документа",
+        "db_column": "r_object_id",
+        "db_table": "public.ddt_document_kind",
+        "match_count": 11,
+        "match_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000003nc",
+          "00xxxxxx000003n9",
+          "00xxxxxx000003mz"
+        ]
+      },
+      {
+        "excel_column": "Классификатор",
+        "db_column": "r_object_id",
+        "db_table": "public.ddt_classification",
+        "match_count": 3,
+        "match_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000006gz",
+          "00000002000uhzv4",
+          "0000000200026grk"
+        ]
+      },
+      {
+        "excel_column": "Дата регситрации",
+        "db_column": "dsdt_date",
+        "db_table": "public.ddt_business_date",
+        "match_count": 80,
+        "match_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-29"
+        ]
+      },
+      {
+        "excel_column": "Дата у корреспондента",
+        "db_column": "dsdt_date",
+        "db_table": "public.ddt_business_date",
+        "match_count": 97,
+        "match_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-17"
+        ]
+      },
+      {
+        "excel_column": "Дата создания документа",
+        "db_column": "dsdt_date",
+        "db_table": "public.ddt_business_date",
+        "match_count": 90,
+        "match_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-29"
+        ]
+      },
+      {
+        "excel_column": "Контрольная дата документа",
+        "db_column": "due_date_",
+        "db_table": "public.act_hi_taskinst",
+        "match_count": 8,
+        "match_ratio": 1.0,
+        "examples": [
+          "2022-12-16",
+          "2022-10-15",
+          "2022-12-22"
+        ]
+      },
+      {
+        "excel_column": "Флаг Срочный",
+        "db_column": "dss_speaker_contacts",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "match_count": 2,
+        "match_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "excel_column": "Флаг Важный",
+        "db_column": "dss_speaker_contacts",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "match_count": 2,
+        "match_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "excel_column": "Флаг Удаленный",
+        "db_column": "dss_speaker_contacts",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "match_count": 2,
+        "match_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "excel_column": "Ссылка на Исходящий документ",
+        "db_column": "dsid_document",
+        "db_table": "public.ddt_addressee",
+        "match_count": 78,
+        "match_ratio": 0.9873417721518988,
+        "examples": [
+          "000000020010ddtj",
+          "00000002000127um",
+          "00000002000jsqng"
+        ]
+      },
+      {
+        "excel_column": "dss_home",
+        "db_column": "dss_postcode",
+        "db_table": "public.ddt_agent_address",
+        "match_count": 3,
+        "match_ratio": 1.0,
+        "examples": [
+          "TEST",
+          "ASUD_FSK",
+          "ASUD_ESSK"
+        ]
+      }
+    ],
+    "step2": [
+      {
+        "index": 1,
+        "excel_column": "ID Документа",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00000002000024up",
+          "0000000200002iic",
+          "0000000200002ja4"
+        ]
+      },
+      {
+        "index": 2,
+        "excel_column": "Глобай ID",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00000002000024up",
+          "0000000200002iic",
+          "0000000200002ja4"
+        ]
+      },
+      {
+        "index": 3,
+        "excel_column": "Временный номер",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_work_number",
+        "match_count": 484,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "ВР-1925",
+          "ВР-17",
+          "ВР-1367"
+        ]
+      },
+      {
+        "index": 4,
+        "excel_column": "Статус",
+        "db_table": "public.ddt_dict_status_doc",
+        "db_column": "dss_status",
+        "match_count": 8,
+        "confirm_count": 8,
+        "confirm_total": 8,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "executed",
+          "duplicate_check",
+          "registered"
+        ]
+      },
+      {
+        "index": 5,
+        "excel_column": "Регистрационный номер",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_reg_number",
+        "match_count": 459,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "316",
+          "48",
+          "186"
+        ]
+      },
+      {
+        "index": 6,
+        "excel_column": "Краткое описание",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_description",
+        "match_count": 151,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "1",
+          "11",
+          "111"
+        ]
+      },
+      {
+        "index": 7,
+        "excel_column": "Дата у кореспондента",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dss_crsp_reg_number",
+        "match_count": 301,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "/001/1",
+          "/001/2",
+          "/1/17"
+        ]
+      },
+      {
+        "index": 8,
+        "excel_column": "Гриф",
+        "db_table": "public.cont_bck",
+        "db_column": "dsid_stamp",
+        "match_count": 1,
+        "confirm_count": 1,
+        "confirm_total": 1,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000003rm"
+        ]
+      },
+      {
+        "index": 9,
+        "excel_column": "Маршрут документа",
+        "db_table": "public.ddt_approve_template",
+        "db_column": "dsid_policy",
+        "match_count": 1,
+        "confirm_count": 1,
+        "confirm_total": 1,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00xxxxxx0000052h"
+        ]
+      },
+      {
+        "index": 10,
+        "excel_column": "Вид документа",
+        "db_table": "public.ddt_document_kind",
+        "db_column": "r_object_id",
+        "match_count": 11,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000003nc",
+          "00xxxxxx000003n9",
+          "00xxxxxx000003mz"
+        ]
+      },
+      {
+        "index": 11,
+        "excel_column": "Классификатор",
+        "db_table": "public.ddt_classification",
+        "db_column": "r_object_id",
+        "match_count": 3,
+        "confirm_count": 3,
+        "confirm_total": 3,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "00xxxxxx000006gz",
+          "00000002000uhzv4",
+          "0000000200026grk"
+        ]
+      },
+      {
+        "index": 12,
+        "excel_column": "Дата регситрации",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 80,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-29"
+        ]
+      },
+      {
+        "index": 13,
+        "excel_column": "Дата у корреспондента",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 97,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-17"
+        ]
+      },
+      {
+        "index": 14,
+        "excel_column": "Дата создания документа",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 90,
+        "confirm_count": 10,
+        "confirm_total": 10,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "2022-01-08",
+          "2022-11-17",
+          "2022-12-29"
+        ]
+      },
+      {
+        "index": 15,
+        "excel_column": "Контрольная дата документа",
+        "db_table": "public.act_hi_taskinst",
+        "db_column": "due_date_",
+        "match_count": 8,
+        "confirm_count": 8,
+        "confirm_total": 8,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "2022-12-16",
+          "2022-10-15",
+          "2022-12-22"
+        ]
+      },
+      {
+        "index": 16,
+        "excel_column": "Флаг Срочный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "confirm_count": 2,
+        "confirm_total": 2,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "index": 17,
+        "excel_column": "Флаг Важный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "confirm_count": 2,
+        "confirm_total": 2,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "index": 18,
+        "excel_column": "Флаг Удаленный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "confirm_count": 2,
+        "confirm_total": 2,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "f",
+          "t"
+        ]
+      },
+      {
+        "index": 19,
+        "excel_column": "Ссылка на Исходящий документ",
+        "db_table": "public.ddt_addressee",
+        "db_column": "dsid_document",
+        "match_count": 78,
+        "confirm_count": 9,
+        "confirm_total": 10,
+        "confirm_ratio": 0.9,
+        "examples": [
+          "000000020010ddtj",
+          "00000002000127um",
+          "00000002000jsqng"
+        ]
+      },
+      {
+        "index": 20,
+        "excel_column": "dss_home",
+        "db_table": "public.ddt_agent_address",
+        "db_column": "dss_postcode",
+        "match_count": 3,
+        "confirm_count": 3,
+        "confirm_total": 3,
+        "confirm_ratio": 1.0,
+        "examples": [
+          "TEST",
+          "ASUD_FSK",
+          "ASUD_ESSK"
+        ]
+      }
+    ],
+    "step3": {
+      "skipped": false,
+      "message": "Таблиц с одинаковой последовательностью не найдено, вывожу лучшие результаты по количеству совпадений колонок",
+      "candidates": [
+        {
+          "table": "public.ddt_claim_tech_type_doc",
+          "matched_columns": 8,
+          "order_score": 0,
+          "columns_found": "r_object_id (character varying), dss_status (character varying), dss_reg_number (character varying), dss_work_number (character varying), dss_description (character varying), dsid_policy (character varying), dsid_stamp (character varying), dss_crsp_reg_number (character varying)"
+        },
+        {
+          "table": "public.ddt_incoming_type_doc",
+          "matched_columns": 8,
+          "order_score": 0,
+          "columns_found": "r_object_id (character varying), dss_work_number (character varying), dss_status (character varying), dss_reg_number (character varying), dss_description (text), dss_crsp_reg_number (character varying), dsid_stamp (character varying), dsid_policy (character varying)"
+        },
+        {
+          "table": "public.ddt_outlook_incoming_type_doc",
+          "matched_columns": 8,
+          "order_score": 0,
+          "columns_found": "r_object_id (character varying), dss_status (character varying), dss_work_number (character varying), dss_reg_number (character varying), dss_description (character varying), dss_crsp_reg_number (character varying), dsid_policy (character varying), dsid_stamp (character varying)"
+        },
+        {
+          "table": "public.ddt_zk_material_type_doc",
+          "matched_columns": 8,
+          "order_score": 0,
+          "columns_found": "r_object_id (character varying), dss_status (character varying), dss_reg_number (character varying), dss_work_number (character varying), dss_description (character varying), dsid_policy (character varying), dss_speaker_contacts (character varying), dsid_stamp (character varying)"
+        },
+        {
+          "table": "public.cont_bck",
+          "matched_columns": 7,
+          "order_score": 0,
+          "columns_found": "r_object_id (character varying), dss_work_number (character varying), dss_status (character varying), dss_reg_number (character varying), dss_description (character varying), dsid_stamp (character varying), dsid_policy (character varying)"
+        }
+      ]
+    },
+    "step4": {
+      "selection": "public.ddt_incoming_type_doc",
+      "choice": "use_existing"
+    },
+    "suggestions": [
+      {
+        "excel_column": "ID Документа",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "ID Документа",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document_global",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "ID Документа",
+        "db_table": "public.ddt_document_os",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "Глобай ID",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "Глобай ID",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_document_global",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "Глобай ID",
+        "db_table": "public.ddt_document_os",
+        "db_column": "dsid_document",
+        "match_count": 497,
+        "match_ratio": 0.994
+      },
+      {
+        "excel_column": "Временный номер",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_work_number",
+        "match_count": 484,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Временный номер",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dss_work_number",
+        "match_count": 484,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Временный номер",
+        "db_table": "public.ddt_rep_document",
+        "db_column": "dss_document_work_number",
+        "match_count": 484,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Статус",
+        "db_table": "public.ddt_dict_status_doc",
+        "db_column": "dss_status",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Статус",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_status",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Статус",
+        "db_table": "public.ddt_document_life_cycle",
+        "db_column": "dss_state",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Регистрационный номер",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_reg_number",
+        "match_count": 459,
+        "match_ratio": 0.972457627118644
+      },
+      {
+        "excel_column": "Регистрационный номер",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dss_reg_number",
+        "match_count": 459,
+        "match_ratio": 0.972457627118644
+      },
+      {
+        "excel_column": "Регистрационный номер",
+        "db_table": "public.v_ddt_document",
+        "db_column": "dss_reg_number",
+        "match_count": 459,
+        "match_ratio": 0.972457627118644
+      },
+      {
+        "excel_column": "Краткое описание",
+        "db_table": "public.ddt_document",
+        "db_column": "dss_description",
+        "match_count": 151,
+        "match_ratio": 0.9741935483870968
+      },
+      {
+        "excel_column": "Краткое описание",
+        "db_table": "public.v_ddt_document",
+        "db_column": "dss_description",
+        "match_count": 151,
+        "match_ratio": 0.9741935483870968
+      },
+      {
+        "excel_column": "Краткое описание",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dss_description",
+        "match_count": 150,
+        "match_ratio": 0.967741935483871
+      },
+      {
+        "excel_column": "Дата у кореспондента",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dss_crsp_reg_number",
+        "match_count": 301,
+        "match_ratio": 0.9585987261146497
+      },
+      {
+        "excel_column": "Дата у кореспондента",
+        "db_table": "public.ddt_rep_document",
+        "db_column": "dss_document_crsp_reg_number",
+        "match_count": 299,
+        "match_ratio": 0.9522292993630573
+      },
+      {
+        "excel_column": "Дата у кореспондента",
+        "db_table": "public.tmp_ddt_rep_document_backup",
+        "db_column": "dss_document_crsp_reg_number",
+        "match_count": 299,
+        "match_ratio": 0.9522292993630573
+      },
+      {
+        "excel_column": "Гриф",
+        "db_table": "public.cont_bck",
+        "db_column": "dsid_stamp",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Гриф",
+        "db_table": "public.ddt_act_type_doc",
+        "db_column": "dsid_stamp",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Гриф",
+        "db_table": "public.ddt_additional_agreement_type_doc",
+        "db_column": "dsid_stamp",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Маршрут документа",
+        "db_table": "public.ddt_approve_template",
+        "db_column": "dsid_policy",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Маршрут документа",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_policy",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Маршрут документа",
+        "db_table": "public.ddt_document_life_cycle",
+        "db_column": "dsid_document_policy",
+        "match_count": 1,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Вид документа",
+        "db_table": "public.ddt_document_kind",
+        "db_column": "r_object_id",
+        "match_count": 11,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Вид документа",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dsid_document_kind",
+        "match_count": 11,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Вид документа",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dsid_incoming_kind",
+        "match_count": 2,
+        "match_ratio": 0.18181818181818182
+      },
+      {
+        "excel_column": "Классификатор",
+        "db_table": "public.ddt_classification",
+        "db_column": "r_object_id",
+        "match_count": 3,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Классификатор",
+        "db_table": "public.ddt_document",
+        "db_column": "dsid_classification",
+        "match_count": 3,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Классификатор",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dsid_classification",
+        "match_count": 3,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Дата регситрации",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 80,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Дата регситрации",
+        "db_table": "public.ddt_user_audit",
+        "db_column": "r_creation_date",
+        "match_count": 70,
+        "match_ratio": 0.875
+      },
+      {
+        "excel_column": "Дата регситрации",
+        "db_table": "public.ddt_user_audit",
+        "db_column": "r_modify_date",
+        "match_count": 70,
+        "match_ratio": 0.875
+      },
+      {
+        "excel_column": "Дата у корреспондента",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 97,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Дата у корреспондента",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_workday_end_after_lunch",
+        "match_count": 79,
+        "match_ratio": 0.8144329896907216
+      },
+      {
+        "excel_column": "Дата у корреспондента",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_workday_end_before_lunch",
+        "match_count": 79,
+        "match_ratio": 0.8144329896907216
+      },
+      {
+        "excel_column": "Дата создания документа",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 90,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Дата создания документа",
+        "db_table": "public.ddt_user_audit",
+        "db_column": "r_creation_date",
+        "match_count": 79,
+        "match_ratio": 0.8777777777777778
+      },
+      {
+        "excel_column": "Дата создания документа",
+        "db_table": "public.ddt_user_audit",
+        "db_column": "r_modify_date",
+        "match_count": 79,
+        "match_ratio": 0.8777777777777778
+      },
+      {
+        "excel_column": "Контрольная дата документа",
+        "db_table": "public.act_hi_taskinst",
+        "db_column": "due_date_",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Контрольная дата документа",
+        "db_table": "public.ddt_business_date",
+        "db_column": "dsdt_date",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Контрольная дата документа",
+        "db_table": "public.ddt_incoming_type_doc",
+        "db_column": "dsdt_control_date",
+        "match_count": 8,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Срочный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Срочный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_first_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Срочный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_last_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Важный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Важный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_first_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Важный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_last_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Удаленный",
+        "db_table": "public.ddt_zk_material_type_doc",
+        "db_column": "dss_speaker_contacts",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Удаленный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_first_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Флаг Удаленный",
+        "db_table": "public.dm_user",
+        "db_column": "dss_last_name",
+        "match_count": 2,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "Ссылка на Исходящий документ",
+        "db_table": "public.ddt_addressee",
+        "db_column": "dsid_document",
+        "match_count": 78,
+        "match_ratio": 0.9873417721518988
+      },
+      {
+        "excel_column": "Ссылка на Исходящий документ",
+        "db_table": "public.ddt_approve_stage",
+        "db_column": "dsid_document",
+        "match_count": 78,
+        "match_ratio": 0.9873417721518988
+      },
+      {
+        "excel_column": "Ссылка на Исходящий документ",
+        "db_table": "public.ddt_approver",
+        "db_column": "dsid_document",
+        "match_count": 78,
+        "match_ratio": 0.9873417721518988
+      },
+      {
+        "excel_column": "dss_home",
+        "db_table": "public.ddt_agent_address",
+        "db_column": "dss_postcode",
+        "match_count": 3,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "dss_home",
+        "db_table": "public.ddt_contract_type_doc",
+        "db_column": "dss_home",
+        "match_count": 3,
+        "match_ratio": 1.0
+      },
+      {
+        "excel_column": "dss_home",
+        "db_table": "public.ddt_federation_message",
+        "db_column": "dss_source_docbase",
+        "match_count": 3,
+        "match_ratio": 1.0
+      }
+    ]
+  }
+]

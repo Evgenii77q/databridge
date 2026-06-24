@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "databridge",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["start_server.py"],
+      "port": 3737
+    }
+  ]
+}

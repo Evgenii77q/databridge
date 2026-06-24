@@ -1,0 +1,21 @@
+sheet,index,excel_column,db_table,db_column,match_count,confirm_count,confirm_total,confirm_ratio
+Входящие документы 500 штук,1,ID Документа,public.ddt_document,dsid_document,497,10,10,1.0
+Входящие документы 500 штук,2,Глобай ID,public.ddt_document,dsid_document,497,10,10,1.0
+Входящие документы 500 штук,3,Временный номер,public.ddt_document,dss_work_number,484,10,10,1.0
+Входящие документы 500 штук,4,Статус,public.ddt_dict_status_doc,dss_status,8,8,8,1.0
+Входящие документы 500 штук,5,Регистрационный номер,public.ddt_document,dss_reg_number,459,10,10,1.0
+Входящие документы 500 штук,6,Краткое описание,public.ddt_document,dss_description,151,10,10,1.0
+Входящие документы 500 штук,7,Дата у кореспондента,public.ddt_incoming_type_doc,dss_crsp_reg_number,301,10,10,1.0
+Входящие документы 500 штук,8,Гриф,public.cont_bck,dsid_stamp,1,1,1,1.0
+Входящие документы 500 штук,9,Маршрут документа,public.ddt_approve_template,dsid_policy,1,1,1,1.0
+Входящие документы 500 штук,10,Вид документа,public.ddt_document_kind,r_object_id,11,10,10,1.0
+Входящие документы 500 штук,11,Классификатор,public.ddt_classification,r_object_id,3,3,3,1.0
+Входящие документы 500 штук,12,Дата регситрации,public.ddt_business_date,dsdt_date,80,10,10,1.0
+Входящие документы 500 штук,13,Дата у корреспондента,public.ddt_business_date,dsdt_date,97,10,10,1.0
+Входящие документы 500 штук,14,Дата создания документа,public.ddt_business_date,dsdt_date,90,10,10,1.0
+Входящие документы 500 штук,15,Контрольная дата документа,public.act_hi_taskinst,due_date_,8,8,8,1.0
+Входящие документы 500 штук,16,Флаг Срочный,public.ddt_zk_material_type_doc,dss_speaker_contacts,2,2,2,1.0
+Входящие документы 500 штук,17,Флаг Важный,public.ddt_zk_material_type_doc,dss_speaker_contacts,2,2,2,1.0
+Входящие документы 500 штук,18,Флаг Удаленный,public.ddt_zk_material_type_doc,dss_speaker_contacts,2,2,2,1.0
+Входящие документы 500 штук,19,Ссылка на Исходящий документ,public.ddt_addressee,dsid_document,78,9,10,0.9
+Входящие документы 500 штук,20,dss_home,public.ddt_agent_address,dss_postcode,3,3,3,1.0
